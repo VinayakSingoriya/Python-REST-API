@@ -25,9 +25,9 @@ BASE = "http://127.0.0.1:5000/"
 
 
 # for test_5.py
-data = [{"likes":10, "views":150, "name":"cpp"},
-       {"likes":20, "views":200, "name":"java"},
-       {"likes":30, "views":300, "name":"python"}]
+data = [{"likes": 10, "views": 150, "name": "cpp"},
+        {"likes": 20, "views": 200, "name": "java"},
+        {"likes": 30, "views": 300, "name": "python"}]
 
 for i in range(len(data)):
     response = requests.put(BASE + "video/" + str(i), data[i])

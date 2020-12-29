@@ -5,9 +5,13 @@ app = Flask(__name__)
 api = Api(app)
 
 video_put_args = reqparse.RequestParser()
-video_put_args.add_argument("name", type=str, help="Name of the video is required", required = True)
-video_put_args.add_argument("views", type=int, help="views of the video required", required = True)
-video_put_args.add_argument("likes", type=int, help="likes of the video is required", required = True)
+video_put_args.add_argument(
+    "name", type=str, help="Name of the video is required", required=True)
+video_put_args.add_argument(
+    "views", type=int, help="views of the video required", required=True)
+video_put_args.add_argument(
+    "likes", type=int, help="likes of the video is required", required=True)
+
 
 class Video(Resource):
     def get(self, video_id):
@@ -15,13 +19,9 @@ class Video(Resource):
 
     def put(self, video_id):
         args = video_put_args.parse_args()
-      
 
 
-
-          
-        
 api.add_resource(Video, "/video/<int:video_id>")
 
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.run(debug=True)
